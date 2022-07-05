@@ -1,0 +1,241 @@
+/* mobile size size: small 480*/
+
+#first-fold > .content > h1 {
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    color: #C14953;
+    font-size: 2.5rem;
+    line-height: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.start {
+    background-color:#C14953;
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    border: 0;
+    padding: 10px;
+    width: 200px;
+}  
+
+.covid-collapse-btn {
+    color: #C14953 !important;
+    border: 0;
+     
+}
+    
+.header-img {
+    padding-top: 70px;
+    height: 30px;
+    position: relative;
+        
+}
+    
+.landing-img {
+    width: 50%;
+}
+    
+
+
+@media screen and (min-width: 481px) {
+
+.navbar-brand > img {
+    height: 40px;
+  }
+
+#first-fold {
+    max-height: 80vh;
+    display: flex;
+    /* justify-content: center; */
+  }
+
+
+.covid-collapse-btn {
+    color: #C14953 !important;
+    border: 0;
+ }
+
+.collapse {
+    font-family: 'Abril Fatface';
+    font-size: large;
+    font-weight: bold;
+ }
+
+.nav-link {
+      justify-content: space-evenly;
+ }
+
+
+#first-fold > .content > h1 {
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    color: #C14953;
+    font-size: 3.5rem;
+    line-height: 50px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.header-img {
+    position: relative;
+    padding-top: 70px;
+    height: 30px;
+    
+  }
+
+.landing-img {
+    width: 100%;
+  }
+
+
+.start {
+    background-color:#C14953;
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    border: 0;
+    padding: 10px;
+    width: 200px;
+  }  
+
+#second-fold {
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+
+}
+/* ipad styling: small */ 
+
+@media screen and (min-width: 605px) {
+    .content {
+      padding: 20px;
+    }
+  
+  
+    .header-img {
+      position: relative;
+      top: 15%;
+      width: 60%;
+    }
+
+    .landing-img {
+        width: 100%;
+        /* padding-left: 100px; */
+    }
+  
+  }
+
+
+/* ipad pro styling : large */
+@media screen and (min-width: 993px) {
+    .content {
+      padding: 20px;
+    }
+  
+  
+    .header-img {
+      position: relative;
+      top: 15%;
+      width: 60%;
+    }
+  
+  }
+
+
+/* desktop styling : large */
+@media screen and (min-width: 1100px) {
+    .content {
+      padding: 20px;
+    }
+  
+
+    #first-fold > .content > h1 {
+        font-family: 'Abril Fatface';
+        font-weight: bold;
+        color: #C14953;
+        font-size: 4.5rem;
+        line-height: 70px;
+        padding-top: 100px;
+        padding-bottom: 20px;
+      }
+    
+
+    .header-img {
+      position: relative;
+      /* border: black 2px solid; */
+      padding-left: 100px;
+      padding-top: 70px;
+    }
+
+    .landing-img {
+        width: 65%;
+        /* padding-left: 100px; */
+    }
+  
+    #first-fold {
+    max-height: 100%;
+    justify-content: center;
+  
+    }
+    
+    .nav-link {
+    text-align: center;
+  
+    }
+ 
+  }
+  
+  
+  /* desktop styling : large */
+  @media screen and (min-width: 1400px) {
+    .content {
+      padding: 20px;
+    }
+  
+  
+    .header-img {
+      position: relative;
+      top: 0;
+      width: 60%;
+    }
+  
+
+    .landing-img {
+        width: 85%;
+    }
+
+
+    #first-fold {
+    max-height: 100%;
+    justify-content: center;
+    }
+
+    #second-fold {
+        max-height: 80vh;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    #chart {
+      max-width: 900px;  
+      overflow-y: scroll;
+  
+  }
+}
