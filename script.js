@@ -32,7 +32,7 @@ async function loadData() {
     })
   }
   
-  
+
   // PRINTING THE ARRAYS FOR DEBUGGING
   
   console.log(countries)
@@ -41,38 +41,68 @@ async function loadData() {
   console.log(recordDate)
   
   
-  
-  
-  
-  
   //CREATING THE CHART DESIGN
+  // var options = {
+  //   series: [{
+  //   data: TotalConfirmed
+  //   }],
+  //     chart: {
+  //     type: 'bar',  
+  //     width:'900px',
+  //     height:'6000px',
+      
+  //   },
+  //   plotOptions: {
+  //     bar: {
+  //       borderRadius: 4,
+  //       horizontal: true,
+  //     }
+  //   },
+  //   dataLabels: {
+  //     enabled: false
+  //   },
+  //   xaxis: {
+  //     categories: countries,
+       
+  //   }
+  // };
+  
+
   var options = {
     series: [{
+    data: TotalDeaths
+    }, {
     data: TotalConfirmed
     }],
       chart: {
-      type: 'bar',    
+      type: 'bar',  
       width:'900px',
       height:'6000px',
       
     },
     plotOptions: {
       bar: {
-        borderRadius: 4,
+        borderRadius: 2,
         horizontal: true,
       }
     },
     dataLabels: {
-      enabled: false
+      enabled: false,
+
+    },
+
+    tooltip: {
+      shared: true,
+      intersect: false
+
     },
     xaxis: {
-      categories: countries,    
-    }
+      categories: countries,
+       
+    },
   };
   
-  
-  
-  
+ 
   window.addEventListener('DOMContentLoaded', async()=>{
     //RE-RENDER THE CHART
     chart.updateOptions({
