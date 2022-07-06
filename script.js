@@ -2,7 +2,7 @@
 async function loadData() {
   const response = await axios.get('https://api.covid19api.com/summary')
   // console.log(response)
-  return response.data.Countries.splice(0,15)
+  return response.data.Countries.splice(0,25)
 }
 
 // CREATE ARRAY FOR CONTAINER OF THE DATA FROM API

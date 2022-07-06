@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 h1,
 h2,
 h3 {
@@ -6,7 +5,6 @@ h3 {
   font-weight: bold;
   color: #C14953!important;
 }
-=======
 
 #first-fold {
   max-height: 200vh;
@@ -14,7 +12,6 @@ h3 {
   margin-bottom: 40px;
 }
 
->>>>>>> 09f7ae50f242e26d088ca6f095ac102bdbadaf8b
 
 #first-fold > .content > h1 {
     font-family: 'Abril Fatface';
@@ -26,17 +23,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-.start {
-    background-color:#C14953;
-    font-family: 'Abril Fatface';
-    font-weight: bold;
-    border-radius: 20px;
-    color: white;
-    position: relative;
-    border: 0;
-    padding: 10px;
-    width: 200px;
-}  
+
 
 .covid-collapse-btn {
     color: #C14953 !important;
@@ -117,12 +104,6 @@ h3 {
     margin-right: auto;
   }
 
-/* .header-img {
-    position: relative;
-    padding-top: 70px;
-    height: 30px;
-    
-  } */
 
 .landing-img {
     width: 90%;
@@ -131,6 +112,7 @@ h3 {
 
 .start {
     background-color:#C14953;
+    display: flex;
     font-family: 'Abril Fatface';
     font-weight: bold;
     border-radius: 20px;
@@ -140,7 +122,8 @@ h3 {
     padding: 10px;
     width: 200px;
     text-decoration: none;
-    text-align: center;
+    justify-content: center;
+
 } 
 .start:hover {
     background-color:#b6444d;
@@ -155,13 +138,7 @@ h3 {
     .content {
       padding: 20px;
     }
-  
-  
-    /* .header-img {
-      position: relative;
-      top: 15%;
-      width: 60%;
-    } */
+ 
 
     .landing-img {
       width: 70%;
@@ -210,13 +187,13 @@ h3 {
 
     .header-img {
       position: relative;
-      padding-left: 100px;
+      /* padding-left: 100px; */
       padding-top: 70px;
     }
 
     .landing-img {
         width: 70%;
-        /* padding-left: 100px; */
+        
     }
   
     .nav-link {
@@ -234,17 +211,10 @@ h3 {
     }
   
   
-    /* .header-img {
-      position: relative;
-      top: 0;
-      width: 60%;
-    } */
-  
 
     .landing-img {
         width: 70%;
     }
-<<<<<<< HEAD
 
 
     #first-fold {
@@ -262,7 +232,5 @@ h3 {
     #chart {
       overflow-y: hidden;
   }
-=======
   
->>>>>>> 09f7ae50f242e26d088ca6f095ac102bdbadaf8b
 }
