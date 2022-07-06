@@ -76,6 +76,12 @@ var options = {
 };
 
 
+//RENDERING THE CHART
+const chart = new ApexCharts(
+  document.querySelector('#chart'),
+  options
+)
+
 window.addEventListener('DOMContentLoaded', async()=>{
   //RE-RENDER THE CHART
   chart.updateOptions({
@@ -93,9 +99,6 @@ window.addEventListener('DOMContentLoaded', async()=>{
 })
 
 
-//RENDERING THE CHART
-const chart = new ApexCharts(
-  document.querySelector('#chart'),
-  options
-)
+
+
 
