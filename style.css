@@ -1,4 +1,10 @@
-/* mobile size size: small 480*/
+h1,
+h2,
+h3 {
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+  color: #C14953!important;
+}
 
 #first-fold > .content > h1 {
     font-family: 'Abril Fatface';
@@ -38,7 +44,22 @@
 .landing-img {
     width: 50%;
 }
-    
+
+.nav-list {
+  grid-gap: 50px;
+}
+
+.countryInput {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  color: #b6444d;
+  font-size: 16px;
+  font-weight: bold;
+  border:2px solid #b6444d;
+}
+
+
 
 
 @media screen and (min-width: 481px) {
@@ -109,7 +130,13 @@
     border: 0;
     padding: 10px;
     width: 200px;
-  }  
+    text-decoration: none;
+    text-align: center;
+} 
+.start:hover {
+    background-color:#b6444d;
+    color: white;
+}  
 
 #second-fold {
     max-height: 80vh;
@@ -234,8 +261,6 @@
     }
 
     #chart {
-      max-width: 900px;  
-      overflow-y: scroll;
-  
+      overflow-y: hidden;
   }
 }

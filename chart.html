@@ -26,7 +26,7 @@
         <!--  navlinks div -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!--  navlinks -->
-              <ul class="navbar-nav nav-list ms-auto mb-lg-0">
+              <ul class="navbar-nav ms-auto mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" style="color: #CF0015;" href="#">World Updates</a>
               </li>
@@ -41,21 +41,20 @@
         </div>
       </nav>
 
-    <div class="banner">
-      <div id="first-fold">
-        <div class="content">
-          <h1>CHECK<br>
-            COVID-19 <br>
-            UPDATES <br>
-            <span style="font-size: 2.4rem;">in one platform</span> 
-            </h1>
-            <a href="./chart.html" class="start">START </a>
-        </div>
-        <div class="header-img">
-            <img src="./src/asset/image/1st-photo.png" class="landing-img" alt="illustration">
+      <div class="input-group m-5">
+        <h3>Country</h3>
+        <div class="input-group mb-3">
+          <select class="custom-select countryInput" id="select-country" onchange="selectCountry()"">
+            <option selected>Select Country...</option>
+          </select>
         </div>
       </div>
-    </div>
+      
+      <div class="row">
+        <div class="col">
+          <div id="chart"></div>
+        </div>
+      </div>
     </div>
   </div>
 
