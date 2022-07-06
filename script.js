@@ -1,7 +1,7 @@
 // GET DATA FROM API
 async function loadData() {
   const response = await axios.get('https://api.covid19api.com/summary')
-  console.log(response)
+  // console.log(response)
   return response.data.Countries.splice(0,15)
 }
 
@@ -32,18 +32,15 @@ async function getData(){
   })
 }
 
-async function selectData(){
-  var select = document.getElementById("select-country");
-  var options = countries;
-  console.log(options)
-
-  for(var i = 0; i < options.length; i++) {
-      var opt = options[i];
-      var el = document.createElement("option");
-      el.textContent = opt;
-      el.value = opt;
-      select.appendChild(el);
-  }
+async function getCountry(){
+  const countrySelect = document.getElementById("select-country");
+  countries.forEach(country => {
+    const countryName = country;
+    const option = document.createElement('option')
+    option.setAttribute('value', countryName)
+    option.innerHTML = countryName;
+    countrySelect.appendChild(option)
+  })
 }
 
 // PRINTING THE ARRAYS FOR DEBUGGING
@@ -91,7 +88,7 @@ window.addEventListener('DOMContentLoaded', async()=>{
 
   // CALLING THE FUNCTIONS
   await getData(); 
-  await selectData();
+  await getCountry();
   await chart.render();
 })
 
@@ -101,9 +98,4 @@ const chart = new ApexCharts(
   document.querySelector('#chart'),
   options
 )
-
-function selectCountry(){
-  let selectedCountry = document.getElementById("select-country").value;
-  console.log(selectedCountry)
-}
 
