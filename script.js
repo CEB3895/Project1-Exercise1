@@ -1,7 +1,7 @@
 // GET DATA FROM API
 async function loadData() {
-  let response = await axios.get('https://api.covid19api.com/summary');
-  // console.log(response.data.Countries)
+  const response = await axios.get('https://api.covid19api.com/summary')
+  console.log(response)
   return response.data.Countries.splice(0,15)
 }
 
@@ -13,7 +13,7 @@ let recordDate= []
 
 // GETTING COUNTRIES
 async function getData(){
-  let series = await loadData(); 
+  const series = await loadData(); 
   // console.log(series)
   series.map (data=>{
     countries.push(
@@ -33,7 +33,6 @@ async function getData(){
 }
 
 async function selectData(){
-  
   var select = document.getElementById("select-country");
   var options = countries;
   console.log(options)
@@ -46,18 +45,6 @@ async function selectData(){
       select.appendChild(el);
   }
 }
-var select = document.getElementById("select-country");
-var options = countries;
-console.log(options)
-
-for(var i = 0; i < options.length; i++) {
-    var opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-}
-
 
 // PRINTING THE ARRAYS FOR DEBUGGING
 
@@ -74,7 +61,7 @@ var options = {
   }],
     chart: {
     type: 'bar',
-    height:'600px',
+    height:'500px',
   },
   plotOptions: {
     bar: {
@@ -90,8 +77,6 @@ var options = {
   },
   colors:['#ED428B']
 };
-
-
 
 
 window.addEventListener('DOMContentLoaded', async()=>{
