@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 h1,
 h2,
 h3 {
@@ -6,37 +5,6 @@ h3 {
   font-weight: bold;
   color: #C14953!important;
 }
-=======
-
-#first-fold {
-  max-height: 200vh;
-  display: flex;
-  margin-bottom: 40px;
-}
-
->>>>>>> 09f7ae50f242e26d088ca6f095ac102bdbadaf8b
-
-#first-fold > .content > h1 {
-    font-family: 'Abril Fatface';
-    font-weight: bold;
-    color: #C14953;
-    font-size: 2.5rem;
-    line-height: 50px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
-
-.start {
-    background-color:#C14953;
-    font-family: 'Abril Fatface';
-    font-weight: bold;
-    border-radius: 20px;
-    color: white;
-    position: relative;
-    border: 0;
-    padding: 10px;
-    width: 200px;
-}  
 
 .covid-collapse-btn {
     color: #C14953 !important;
@@ -127,26 +95,6 @@ h3 {
 .landing-img {
     width: 90%;
   }
-
-
-.start {
-    background-color:#C14953;
-    font-family: 'Abril Fatface';
-    font-weight: bold;
-    border-radius: 20px;
-    color: white;
-    position: relative;
-    border: 0;
-    padding: 10px;
-    width: 200px;
-    text-decoration: none;
-    text-align: center;
-} 
-.start:hover {
-    background-color:#b6444d;
-    color: white;
-}  
-
 
 }
 /* ipad styling: small */ 
@@ -242,14 +190,14 @@ h3 {
   
 
     .landing-img {
-        width: 70%;
+        width: 90%;
     }
-<<<<<<< HEAD
 
 
     #first-fold {
-    max-height: 100%;
-    justify-content: center;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
     }
 
     #second-fold {
@@ -262,7 +210,22 @@ h3 {
     #chart {
       overflow-y: hidden;
   }
-=======
-  
->>>>>>> 09f7ae50f242e26d088ca6f095ac102bdbadaf8b
 }
+
+.start {
+  background-color:#C14953;
+  font-family: 'Abril Fatface';
+  font-weight: bold;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  border: 0;
+  padding: 10px 87px;
+  font-size: 24px;
+  text-decoration: none;
+  text-align: center;
+} 
+.start:hover {
+  background-color:#b6444d;
+  color: white;
+}  
