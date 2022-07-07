@@ -47,8 +47,8 @@ function displayChart(data) {
 
 function getCovidData(country) {
 
-    const endpoint = `https://api.covid19api.com/total/dayone/country/${country}`;
-    fetch(endpoint).then(response => response.json())
+  axios.get(`https://api.covid19api.com/total/dayone/country/${country}`)
+        .then(response => (response.data))
         .then(data => {
             chartDiv.innerHTML = "";
             displayChart(data);
@@ -58,20 +58,20 @@ function getCovidData(country) {
 }
 
 function getCountries() {
-    const endpoint = "https://api.covid19api.com/countries";
-    fetch(endpoint).then(response => response.json())
-        .then(countries => {
-            countries.forEach(country => {
-                const countryName = country.Country;
-                const option = document.createElement("option");
-                option.setAttribute("value", countryName);
-                option.innerHTML = countryName;
-                countrysSelectELement.appendChild(option);
-            });
-            currentCountry = countrysSelectELement.children[0].value;
-            getCovidData(currentCountry);
-        })
-        .catch(err => console.warn(err));
+    axios.get("https://api.covid19api.com/countries")
+         .then(response => (response.data))
+         .then(countries => {
+              countries.forEach(country => {
+                  const countryName = country.Country;
+                  const option = document.createElement("option");
+                  option.setAttribute("value", countryName);
+                  option.innerHTML = countryName;
+                  countrysSelectELement.appendChild(option);
+              });
+              currentCountry = countrysSelectELement.children[0].value;
+              getCovidData(currentCountry);
+          })
+          .catch(err => console.warn(err));
 }
 
 getCountries();
