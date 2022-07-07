@@ -1,101 +1,84 @@
-// GET DATA FROM API
-async function loadData() {
-  const response = await axios.get('https://api.covid19api.com/summary')
-  // console.log(response)
-  return response.data.Countries.splice(0,15)
-}
-
-// CREATE ARRAY FOR CONTAINER OF THE DATA FROM API
+const countrysSelectELement = document.querySelector("#select-country");
+let currentCountry; 
+const chartDiv = document.querySelector(".chartDiv");
 let countries = []
-let TotalConfirmed = []
-let TotalDeaths = []
 let recordDate= []
 
-// GETTING COUNTRIES
-async function getData(){
-  const series = await loadData(); 
-  // console.log(series)
-  series.map (data=>{
-    countries.push(
-      data.Country
-    )
-    TotalDeaths.push(
-      data.TotalConfirmed
-    )
-    TotalConfirmed.push(
-      data.TotalDeaths
-    )
-    recordDate.push(
-      data.Date
-    )
-    
-  })
-}
 
-async function getCountry(){
-  const countrySelect = document.getElementById("select-country");
-  countries.forEach(country => {
-    const countryName = country;
-    const option = document.createElement('option')
-    option.setAttribute('value', countryName)
-    option.innerHTML = countryName;
-    countrySelect.appendChild(option)
-  })
-}
+function displayChart(data) {
+  const dailyCases = data.map((daily, index) => {
+    return Math.abs(daily.Confirmed)
+  }).splice(1, 20);
+  TotalConfirmed = dailyCases
 
-// PRINTING THE ARRAYS FOR DEBUGGING
+  const dateCases = data.map((daily, index) => {
+    return daily.Date
+  }).splice(1, 20);
+  recordDate = moment(dateCases).format('YYYY-MM-DDTHH')
 
-// console.log(countries)
-// console.log(TotalConfirmed)
-// console.log(TotalDeaths)
-// console.log(recordDate)
-
-
-//CREATING THE CHART DESIGN
-var options = {
-  series: [{
-  data: TotalConfirmed
-  }],
+  console.log(data)
+  var options = {
+    series: [{
+      name: 'cases',
+      data: TotalConfirmed
+    }],
     chart: {
-    type: 'bar',
-    height:'500px',
-  },
-  plotOptions: {
-    bar: {
-      borderRadius: 4,
-      horizontal: false,
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  xaxis: {
-    categories: countries,    
-  },
-  colors:['#ED428B']
-};
-
-
-window.addEventListener('DOMContentLoaded', async()=>{
-  //RE-RENDER THE CHART
-  chart.updateOptions({
-    xaxis: {
-      labels: {
-        show: true
+      type: 'bar',
+      height:'500px',
+    },
+    plotOptions: {
+      bar: {
+        borderRadius: 4,
+        horizontal: false,
       }
-    },    
-  })
+    },
+    dataLabels: {
+      enabled: false
+    },
+    xaxis: {
+      categories: dateCases,    
+    },
+  }
+  
+  var chart = new ApexCharts(document.querySelector(".chartDiv"), options);
+  
+  chart.render();
+}
 
-  // CALLING THE FUNCTIONS
-  await getData(); 
-  await getCountry();
-  await chart.render();
-})
+function getCovidData(country) {
+  
+  const endpoint = `https://api.covid19api.com/total/dayone/country/${country}`;
+  fetch(endpoint).then(response => response.json())
+    .then(data => {
+      chartDiv.innerHTML = "";
+      displayChart(data);
+    })
+    .catch(err => console.warn(err));
+  
+}
 
+function getCountries() {
+  const endpoint = "https://api.covid19api.com/countries";
+  fetch(endpoint).then(response => response.json())
+    .then(countries => {
+      countries.forEach(country => {
+         const countryName = country.Country; 
+         const option = document.createElement("option");
+         option.setAttribute("value", countryName);
+         option.innerHTML = countryName; 
+         countrysSelectELement.appendChild(option);
+      });
+      currentCountry = countrysSelectELement.children[0].value; 
+      getCovidData(currentCountry);
+    })
+    .catch(err => console.warn(err));
+}
 
-//RENDERING THE CHART
-const chart = new ApexCharts(
-  document.querySelector('#chart'),
-  options
-)
+getCountries();
 
+countrysSelectELement.addEventListener("change", () => {
+   const currentIndex = countrysSelectELement.selectedIndex; 
+   const countrySelected = countrysSelectELement.children[currentIndex].value; 
+    currentCountry = countrySelected; 
+   getCovidData(countrySelected);
+});
