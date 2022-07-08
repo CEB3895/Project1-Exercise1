@@ -1,6 +1,6 @@
 // GET DATA FROM API
 async function loadData() {
-    let response = await axios.get('https://api.covid19api.com/summary');
+    let response = await axios.get('https://api.covid19api.com/live/country/south-africa/status/confirmed');
     console.log(response.data.Countries)
     return response.data.Countries
   }
@@ -32,6 +32,7 @@ async function loadData() {
       countrySlug.push(
         data.Slug
       )
+      
     })
   }
   
@@ -56,7 +57,7 @@ async function loadData() {
     },
     {
       name:'Total Deaths',
-      data:TotalDeaths
+      data: TotalDeaths
     }
     ],
       chart: {
@@ -78,6 +79,9 @@ async function loadData() {
       categories: countries,    
     }
   };
+  
+  
+  
   
   window.addEventListener('DOMContentLoaded', async()=>{
     //RE-RENDER THE CHART
