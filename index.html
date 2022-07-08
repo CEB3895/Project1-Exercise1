@@ -28,12 +28,12 @@
             <!--  navlinks -->
               <ul class="navbar-nav nav-list ms-auto mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" style="color: #C14953;" href="#">World Updates</a>
+                <a href="./barchart.html" id="WorldUpdates" class="nav-link" style="color: #C14953;" href="#">World Updates</a>
               </li>
-              <li class="nav-item">
+              <li id="Symptoms" class="nav-item">
                 <a class="nav-link" style="color: #C14953;" href="#">Symptoms</a>
               </li>
-              <li class="nav-item">
+              <li id="Prevention" class="nav-item">
                 <a class="nav-link" style="color: #C14953;" href="#">Prevention</a>
               </li>
             </ul>
@@ -41,27 +41,74 @@
         </div>
       </nav>
 
-      <div class="banner">
-        <div id="first-fold">
+      <div id="all-pages">
+        <div id="first-fold" class="page">
           <div class="content">
-            <h1 class="mb-5">CHECK ALL<br>
-              COVID-19 <br>
-              INFORMATION <br>
-              IN ONE PLATFORM
+            <h1 class="mb-5">SAVE<br>YOURSELF<br>
+              SAVE <br>THE WORLD <br>
               </h1>
               <a href="./chart.html" class="start">START </a>
           </div>
-          <div class="header-img">
-              <img src="./src/asset/image/1st-photo.png" class="landing-img" alt="illustration">
+            <div class="header-img">
+                <img src="./src/asset/image/1st-photo.png" class="illustration-img" alt="illustration">
+            </div>
           </div>
         </div>
+      
+      
+        <div id="second-fold" class="page hidden">
+          <div class="content">
+            <h1 class="mb-5">WHAT ARE THE <br> SYMPTOMS?<br>
+            </h1>
+              <p class="symptoms-text" style="line-height: 30px;">COVID-19 AFFECTS DIFFERENT PEOPLE IN DIFFERENT WAYS.<br>
+                MOST INFECTED PEOPLE WILL DEVELOP MILD TO MODERATE <br> 
+                ILLNESS AND RECOVER WITHOUT HOSPITALIZATION.
+                <br><br>
+                MOST COMMON SYMPTOMS INCLUDE:<br><br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Fever<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Cough<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Tiredness<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Loss of taste and smell<br>
+              </p>
+
+          </div>
+            <div class="header-img">
+                <img src="./src/asset/image/2nd-photo.png" class="illustration-img" alt="illustration">
+            </div>
+          </div>
+        </div>
+
+        <div id="third-fold" class="page hidden">
+          <div class="content">
+            <h1 class="mb-5">HOW TO PREVENT?<br>
+            </h1>
+              <p class="symptoms-text" style="line-height: 30px;">CHECK WITH YOUR LOCAL HEALTH AUTHORITY FOR THE<br>
+                MOST RELEVENAT GUIDANCE FOR YOUR REGION.<br> 
+                <br>
+                TO PREVENT THE SPREAD OF COVID-19:<br><br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Maintain a safe distance from others (at least 1 metre).<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Wear a mask in public.<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Choose open, well-ventilated spaces over closed ones.<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Clean your hands often.<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Get vaccinated when it’s your turn. Follow local guidance<br>
+                about vaccination.<br>
+                <i class="fa-solid fa-circle-check" style="color: #99be56;"></i> Stay home if you feel unwell.<br>
+              </p>
+
+          </div>
+            <div class="header-img">
+                <img src="./src/asset/image/3rd-photo.png" class="illustration-img" alt="illustration">
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="data.js"></script>
+<script src="barchart.js"></script>
+<script src="chart.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
