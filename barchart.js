@@ -38,7 +38,7 @@ async function loadData() {
   
   // PRINTING THE ARRAYS FOR DEBUGGING
   
-  console.log(countries)
+  //console.log(countries)
   console.log(TotalConfirmed)
   console.log(TotalDeaths)
   console.log(recordDate)
