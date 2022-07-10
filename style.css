@@ -2,14 +2,14 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Abril Fatface';
+  font-family: 'Roboto';
   font-weight: bold !important;
   color: #C14953!important;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
+  font-family: 'Roboto';
+  font-weight: 900;
   color: #C14953!important;
   font-size: 15px;
 }
@@ -18,6 +18,7 @@ p {
 
 #first-fold {
   display: flex;
+  max-width: 900px;
 }
 
 #second-fold {
@@ -267,6 +268,8 @@ text-align: center;
 }
   
 }
+
+
 
 .start {
   background-color:#C14953;

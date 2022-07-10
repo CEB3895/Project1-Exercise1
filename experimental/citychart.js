@@ -7,49 +7,72 @@ let recordDate = []
 function displayChart(data) {
     let provinces = [];
     let confirmed = [];
+    let deaths = [];
+    let recovered = [];
+    let counter = 0;
 
-    data.map(snapshot => {
+    data.map(async snapshot => {
         if (snapshot.Province !== "") {
             provinces.push(snapshot.Province)
             confirmed.push(snapshot.Confirmed)
+            deaths.push(snapshot.Deaths)
+            recovered.push(snapshot.Recovered)
+        }
+
+        counter++;
+
+        var options = {
+            series: [{
+                name: 'Deaths',
+                data: deaths
+            },
+            {
+               name: 'Confirmed',
+               data: confirmed
+            },
+            {
+               name: 'Recovered',
+               data: recovered
+            }],
+            chart: {
+                type: 'bar',
+                width: '900px',
+                height: 'auto',
+                // Di pawala wala pagnirender ule ung height
+                redrawOnParentResize: false
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 4,
+                    horizontal: true,
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            xaxis: {
+                categories: provinces,
+            },
+        }
+
+        if (counter == data.length) {
+            // Resize by the length of the province
+            options.chart.height = 100 * provinces.length
+            const chart = new ApexCharts(document.querySelector(".chartDiv"), options);
+            await chart.render();
         }
     })
 
 
-     var options = {
-         series: [{
-             name: 'cases',
-             data: confirmed
-         }],
-         chart: {
-             type: 'bar',
-             width: '10000px',
-             height: '1000px',
-         },
-         plotOptions: {
-             bar: {
-                 borderRadius: 4,
-                 horizontal: true,
-             }
-         },
-         dataLabels: {
-             enabled: false
-         },
-         xaxis: {
-             categories: provinces,
-         },
-     }
 
-     
-
-    const chart = new ApexCharts(document.querySelector(".chartDiv"), options);
-
-    chart.render();
 }
 
 function getCovidData(country) {
     // Get latest covid update, delay from 1 day
     const dateToday = moment().startOf('day').subtract(1, 'days').format();
+    const lastUpdatedText = document.getElementById("lastUpdated");
+    lastUpdatedText.textContent = moment().startOf('day')
+
     axios.get(`https://api.covid19api.com/live/country/${country}/status/confirmed/date/${dateToday}`)
         //.then(response => (response.data))
         .then(data => {
