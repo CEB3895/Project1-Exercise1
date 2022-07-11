@@ -17,8 +17,8 @@ p {
 
 
 #first-fold {
-  display: flex;
-  max-width: 900px;
+  display: grid;
+  max-width: 900px;  
 }
 
 #second-fold {
@@ -226,8 +226,8 @@ p {
 }
   
 .nav-link {
-text-align: center;
-
+  text-align: center;
+  font-family: 'Roboto';
 }
  
 }
@@ -246,9 +246,7 @@ text-align: center;
 
 
 #first-fold {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
+  padding-top: 100px;
 }
 
 #second-fold {
@@ -290,18 +288,6 @@ text-align: center;
   background-color:#b6444d;
   color: white;
 }  
-
-.page {
-  height: 100vh;
-  position: absolute;
-  width: 100%;
-  box-sizing: border-box;
-
-}
-
-#all-pages {
-  position: relative;
-}
 
 .hidden {
   transform: translateX(-100%);
