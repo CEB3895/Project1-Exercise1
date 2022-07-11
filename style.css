@@ -2,18 +2,23 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-weight: bold !important;
   color: #C14953!important;
 }
 
 p {
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-weight: 900;
   color: #C14953!important;
   font-size: 15px;
 }
 
+.page-title{
+  font-family: Roboto, Helvetica, sans-serif;
+  font-weight: bold !important;
+  color: #C14953!important;
+}
 
 
 #first-fold {

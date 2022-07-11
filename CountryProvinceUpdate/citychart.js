@@ -56,7 +56,7 @@ function displayChart(data) {
         }
 
         if (counter == data.length) {
-            // Resize by the length of the province
+            // Resize by the length of the province/city
             options.chart.height = 100 * provinces.length
             const chart = new ApexCharts(document.querySelector(".chartDiv"), options);
             await chart.render();

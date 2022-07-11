@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script defer src="../libs/moment.min.js"></script>
     <script defer src="./citychart.js"></script>
+    <link href="style.css" rel="stylesheet">
     <!--
       <script defer src="../barchart.js"></script>
       <script defer src="../script.js"></script>
@@ -34,7 +35,7 @@
             <!--  navlinks -->
               <ul class="navbar-nav ms-auto mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" style="color: #CF0015;" href="#">World Updates</a>
+                <a class="nav-link" style="color: #CF0015;" href="../barchart.html">World Updates</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" style="color: #CF0015;" href="#">Symptoms</a>
@@ -49,18 +50,23 @@
       <div class="container">
         <div class="row my-4">
           <div class="col-md-12">
-            <h1 class="text-center" style="font-weight: bold;">Country Updates</h1>
+            <h1 class="page-title">Country Updates</h1>
           </div>
         </div>
         <div class="row">
-          <h3>Country</h3>
+          <h3 class="page-title">Country</h3>
             <div class="input-group mb-5 chart_div">
               <select class="custom-select countryInput" id="select-country">
               </select>
             </div>
         </div>
         <div class="row mx-5">
-          <p>Last Updated: <span id="lastUpdated">00:00</span></p>
+          <p class="page-title">Last Updated: <span id="lastUpdated">00:00</span>
+            <br>
+            Please take note that there are countries that doesn't update their data.
+            <br>
+            Please be patient on searching
+          </p>
           <div class="chartDiv"></div>
         </div>
       </div>
